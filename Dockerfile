@@ -124,6 +124,7 @@ RUN php -i # Test run executable
 
 FROM bitnami/minideb:bullseye as php_intermediate
 
+ARG TARGETARCH
 ARG DIRS_TO_TRIM="/usr/share/man \
 /var/cache/apt \
 /var/lib/apt/lists \
@@ -133,10 +134,10 @@ ARG DIRS_TO_TRIM="/usr/share/man \
 "
 
 ENV BITNAMI_APP_NAME=php-fpm \
-    BITNAMI_IMAGE_VERSION="${PHP_VERSION}-prod-debian-10" \
+    BITNAMI_IMAGE_VERSION="${PHP_VERSION}-prod-debian-11" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:$PATH" \
     LD_LIBRARY_PATH=/opt/bitnami/lib \
-    OS_ARCH="$(uname -m)" \
+    OS_ARCH="${TARGETARCH}" \
     OS_FLAVOUR="debian-11" \
     OS_NAME="linux"
 
