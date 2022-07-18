@@ -45,7 +45,7 @@ jobs:
       -
         name: Test
         run: |
-          docker run --rm ${{ env.TEST_TAG }}
+          docker run --rm ${{ env.TEST_TAG }} php -v
 
       -
         name: Build and push
