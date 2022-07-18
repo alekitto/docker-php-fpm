@@ -158,5 +158,5 @@ EXPOSE 9000
 COPY --from=php_build /opt/bitnami /opt/bitnami
 WORKDIR /app
 
-CMD ["php-fpm" "-F" "--pid" "/opt/bitnami/php/tmp/php-fpm.pid" "-y" "/opt/bitnami/php/etc/php-fpm.conf"]
+CMD ["php-fpm", "-F", "--pid", "/opt/bitnami/php/tmp/php-fpm.pid", "-y", "/opt/bitnami/php/etc/php-fpm.conf"]
 
